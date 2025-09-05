@@ -1,0 +1,30 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "production"
+        type: choice
+        options:
+          - production
+          - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Deploy Backend
+        run: |
+          echo "Déploiement du back-end en ${{ inputs.environment }}"
+          # Ici vous pouvez ajouter vos commandes de déploiement
+          # Par exemple : kubectl, docker-compose, etc.
+
+      - name: Deploy Frontend
+        run: |
+          echo "Déploiement du front-end en ${{ inputs.environment }}"
+          # Ici vous pouvez ajouter vos commandes de déploiement
