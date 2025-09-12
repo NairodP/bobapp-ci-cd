@@ -4,7 +4,7 @@ Clone project:
 
 > git clone XXXXX
 
-## Front-end 
+## Front-end
 
 Go inside folder the front folder:
 
@@ -22,7 +22,7 @@ Launch Front-end:
 
 Build the container:
 
-> docker build -t bobapp-front .  
+> docker build -t bobapp-front .
 
 Start the container:
 
@@ -40,7 +40,7 @@ Install dependencies:
 
 Launch Back-end:
 
->  mvn spring-boot:run
+> mvn spring-boot:run
 
 Launch the tests:
 
@@ -50,17 +50,18 @@ Launch the tests:
 
 Build the container:
 
-> docker build -t bobapp-back .  
+> docker build -t bobapp-back .
 
 Start the container:
 
-> docker run -p 8080:8080 --name bobapp-back -d bobapp-back 
+> docker run -p 8080:8080 --name bobapp-back -d bobapp-back
 
 ## Production Deployment
 
 ### Using Docker Compose
 
 1. Copy the environment file:
+
    ```bash
    cp .env.example .env
    ```
@@ -79,6 +80,7 @@ This project uses GitHub Actions for continuous integration and deployment.
 ### Automated Workflows
 
 1. **CI Pipeline** (`.github/workflows/ci.yml`):
+
    - Runs on every push to `main` branch
    - Executes tests for both backend and frontend
    - Generates coverage reports (Jacoco for backend, npm coverage for frontend)
@@ -124,3 +126,4 @@ Add these secrets to your GitHub repository:
 ├── docker-compose.yml    # Docker Compose configuration
 └── README.md
 ```
+# Test SonarQube
