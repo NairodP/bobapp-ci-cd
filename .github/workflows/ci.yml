@@ -22,12 +22,12 @@ jobs:
       - name: Test Backend
         run: |
           cd back
-          mvn clean test
+          mvn clean test -U
 
       - name: Generate Coverage Report
         run: |
           cd back
-          mvn jacoco:report
+          mvn jacoco:report -U
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -99,7 +99,7 @@ jobs:
           SONAR_HOST_URL: https://sonarcloud.io
         run: |
           cd back
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar
+          mvn -B verify -U org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar
 
   build-and-push:
     needs: [sonar-analysis]
