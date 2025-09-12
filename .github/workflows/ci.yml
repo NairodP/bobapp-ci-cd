@@ -101,7 +101,9 @@ jobs:
           mvn -B verify -U org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar \
             -Dsonar.projectKey=bobapp-ci-cd \
             -Dsonar.organization=nairodp \
-            -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.projectName="BobApp CI/CD" \
+            -Dsonar.projectVersion=1.0
 
   build-and-push:
     needs: [test-backend, test-frontend, sonar-analysis]
