@@ -99,7 +99,7 @@ jobs:
           SONAR_HOST_URL: https://sonarcloud.io
         run: |
           cd back
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar
 
   build-and-push:
     needs: [sonar-analysis]
