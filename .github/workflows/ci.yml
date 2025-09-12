@@ -103,7 +103,7 @@ jobs:
           mvn -B verify -U org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.1.2184:sonar
 
   build-and-push:
-    needs: [sonar-analysis]
+    needs: [test-backend, test-frontend]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
