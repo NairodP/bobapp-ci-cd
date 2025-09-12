@@ -127,3 +127,4 @@ Add these secrets to your GitHub repository:
 └── README.md
 ```
 # Test SonarQube
+# Test Docker deployment - Ven 12 sep 2025 12:46:50 CEST
