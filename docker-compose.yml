@@ -1,6 +1,6 @@
 services:
   bobapp-back:
-    image: test/bobapp-back:latest
+    image: ${DOCKER_USERNAME}/bobapp-back:latest
     ports:
       - "8080:8080"
     environment:
@@ -22,7 +22,7 @@ services:
       retries: 3
 
   bobapp-front:
-    image: test/bobapp-front:latest
+    image: ${DOCKER_USERNAME}/bobapp-front:latest
     ports:
       - "80:80"
     depends_on:
